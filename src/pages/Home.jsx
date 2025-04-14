@@ -111,7 +111,7 @@ function Home() {
               <div className="w-full md:w-2/5 h-48 sm:h-56 md:h-auto relative overflow-hidden">
                 <div className="absolute inset-0 bg-indigo-200 opacity-20"></div>
                 <div className="h-full flex items-center justify-center">
-                  <img src="/src/assets/homepage/industry.jpg" alt="Industry Solutions" className="w-full h-full object-cover md:object-contain" />
+                  <img src="/assets/homepage/industry.jpg" alt="Industry Solutions" className="w-full h-full object-cover md:object-contain" />
                 </div>
               </div>
               
