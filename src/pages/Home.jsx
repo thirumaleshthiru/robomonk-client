@@ -3,112 +3,146 @@ import { School, Briefcase, GraduationCap, ChevronRight } from 'lucide-react';
 
 function Home() {
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gradient-to-b from-indigo-50 to-white text-gray-800">
-      {/* Header Logo Section */}
-      <div className="w-full bg-white py-6 flex justify-center border-b border-indigo-100">
-        <div className="flex flex-col items-center">
-          <img src="/src/assets/homepage/logo.png" alt="RoboMonk Logo" className="w-full h-50 object-contain" />
-          <div className="text-indigo-600 tracking-widest mt-2 text-sm font-medium">
+    <div className="flex flex-col items-center min-h-screen bg-white text-gray-800">
+      {/* Header Logo Section - Responsive sizing */}
+      <div className="w-full py-6 md:py-8 flex justify-center">
+        <div className="flex flex-col items-center px-4">
+          {/* Responsive logo image */}
+          <img src="/src/assets/homepage/logo.png" alt="RoboMonk Logo" className="w-[100%] md:w-[40%] h-auto object-contain" />
+          <div className="text-white tracking-widest text-xs md:text-sm font-medium bg-indigo-800 bg-opacity-40 px-4 md:px-6 py-1 md:py-2 rounded-full mt-2 md:mt-3">
             LEARN • INVENT • DISCOVER
           </div>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="w-full max-w-6xl px-4 py-8">
-        {/* Title Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4 text-indigo-700">
+      {/* Main Content - Added responsive padding */}
+      <div className="w-full max-w-6xl px-4 md:px-6 py-8 md:py-16">
+        {/* Title Section - Responsive text sizes */}
+        <div className="text-center mb-10 md:mb-16">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-indigo-700">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
               Innovate. Learn. Lead.
             </span> 
-            <span className="animate-pulse">🚀</span>
+            <span className="inline-block ml-1 md:ml-2 animate-bounce">🚀</span>
           </h1>
-          <p className="text-xl text-indigo-600">
+          <p className="text-lg md:text-xl text-indigo-600 max-w-3xl mx-auto px-2">
             Bridging Education & Industry with Robotics, AI, and Industry 4.0 Solutions
           </p>
         </div>
 
-        {/* Main Sections with cards alongside content */}
-        <div className="grid grid-cols-1 gap-12 mb-16">
+        {/* Main Sections with cards - Improved mobile layout */}
+        <div className="grid grid-cols-1 gap-8 md:gap-16 mb-10 md:mb-16">
           {/* For Schools */}
-          <div className="flex flex-col md:flex-row shadow-lg rounded-lg overflow-hidden border border-indigo-100 hover:shadow-xl transition-shadow duration-300">
-            {/* Image area */}
-            <div className="w-full md:w-1/3 bg-indigo-50">
-              <img src="/src/assets/homepage/k12.jpg" alt="K-12 Education" className="w-full h-full object-cover" />
-            </div>
-            
-            {/* Content area */}
-            <div className="w-full md:w-2/3 bg-white p-8">
-              <div className="flex items-center mb-4">
-                <School className="text-indigo-600 mr-3" size={28} />
-                <h2 className="text-xl font-bold text-indigo-800">For Schools (Grades 4 - 12)</h2>
+          <div className="bg-gradient-to-br from-indigo-50 to-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl md:hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <div className="flex flex-col md:flex-row h-full">
+              {/* Image area - Better mobile sizing */}
+              <div className="w-full md:w-2/5 h-48 sm:h-56 md:h-auto relative overflow-hidden">
+                <div className="absolute inset-0 bg-indigo-200 opacity-20"></div>
+                <div className="h-full flex items-center justify-center">
+                  <img src="/src/assets/homepage/k12.jpg" alt="K-12 Education" className="w-full h-full object-cover md:object-contain" />
+                </div>
               </div>
-              <div className="mb-6">
-                <p className="text-gray-700 mb-6">
-                  <span className="inline-block transform hover:translate-x-1 transition-transform">👉</span> <strong>Future-Ready STEM, AI & Robotics Labs for Schools</strong> 
-                </p>
-                <button className="bg-indigo-600 text-white px-6 py-3 rounded-md flex items-center hover:bg-indigo-700 transition-colors group">
-                  <span>Explore K-12 Programs</span>
-                  <ChevronRight size={20} className="ml-1 group-hover:translate-x-1 transition-transform" />
-                </button>
+              
+              {/* Content area with flex layout to push button to bottom */}
+              <div className="w-full md:w-3/5 p-5 md:p-8 flex flex-col h-full">
+                <div className="flex items-center mb-4 md:mb-6">
+                  <div className="bg-indigo-600 p-2 md:p-3 rounded-lg md:rounded-xl text-white shadow">
+                    <School size={24} />
+                  </div>
+                  <h2 className="text-xl md:text-2xl font-bold text-indigo-800 ml-3 md:ml-4">For Schools (Grades 4 - 12)</h2>
+                </div>
+                <div className="flex-grow">
+                  <p className="text-gray-700 mb-5 md:mb-8 text-base md:text-lg">
+                    <span className="inline-block text-indigo-600 mr-2">➤</span> 
+                    <strong>Future-Ready STEM, AI & Robotics Labs for Schools</strong> 
+                  </p>
+                </div>
+                {/* Button pushed to bottom */}
+                <div className="mt-auto">
+                  <button className="bg-gradient-to-r from-indigo-600 to-indigo-800 text-white w-full md:w-auto px-4 md:px-8 py-3 md:py-4 rounded-lg md:rounded-xl flex items-center justify-center md:justify-start hover:shadow-lg transition-all">
+                    <span>Explore K-12 Programs</span>
+                    <ChevronRight size={18} className="ml-2" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
 
           {/* For College Students */}
-          <div className="flex flex-col md:flex-row shadow-lg rounded-lg overflow-hidden border border-indigo-100 hover:shadow-xl transition-shadow duration-300">
-            {/* Image area */}
-            <div className="w-full md:w-1/3 bg-indigo-50">
-              <img src="/src/assets/homepage/graduates.jpeg" alt="College Students" className="w-full h-full object-cover" />
-            </div>
-            
-            {/* Content area */}
-            <div className="w-full md:w-2/3 bg-white p-8">
-              <div className="flex items-center mb-4">
-                <GraduationCap className="text-indigo-600 mr-3" size={28} />
-                <h2 className="text-xl font-bold text-indigo-800">For College Students (B.Tech / M.Tech)</h2>
+          <div className="bg-gradient-to-br from-indigo-50 to-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl md:hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <div className="flex flex-col md:flex-row h-full">
+              {/* Image area - Better mobile sizing */}
+              <div className="w-full md:w-2/5 h-48 sm:h-56 md:h-auto relative overflow-hidden">
+                <div className="absolute inset-0 bg-indigo-200 opacity-20"></div>
+                <div className="h-full flex items-center justify-center">
+                  <img src="/src/assets/homepage/graduates.jpeg" alt="College Students" className="w-full h-full object-cover md:object-contain" />
+                </div>
               </div>
-              <div className="mb-6">
-                <p className="text-gray-700 mb-6">
-                  <span className="inline-block transform hover:translate-x-1 transition-transform">👉</span> <strong>Industry-Aligned Training & Research Labs</strong>
-                </p>
-                <button className="bg-indigo-600 text-white px-6 py-3 rounded-md flex items-center hover:bg-indigo-700 transition-colors group">
-                  <span>Discover Engineering Programs</span>
-                  <ChevronRight size={20} className="ml-1 group-hover:translate-x-1 transition-transform" />
-                </button>
+              
+              {/* Content area with flex layout to push button to bottom */}
+              <div className="w-full md:w-3/5 p-5 md:p-8 flex flex-col h-full">
+                <div className="flex items-center mb-4 md:mb-6">
+                  <div className="bg-indigo-600 p-2 md:p-3 rounded-lg md:rounded-xl text-white shadow">
+                    <GraduationCap size={24} />
+                  </div>
+                  <h2 className="text-xl md:text-2xl font-bold text-indigo-800 ml-3 md:ml-4">For College Students (B.Tech / M.Tech)</h2>
+                </div>
+                <div className="flex-grow">
+                  <p className="text-gray-700 mb-5 md:mb-8 text-base md:text-lg">
+                    <span className="inline-block text-indigo-600 mr-2">➤</span>
+                    <strong>Industry-Aligned Training & Research Labs</strong>
+                  </p>
+                </div>
+                {/* Button pushed to bottom */}
+                <div className="mt-auto">
+                  <button className="bg-gradient-to-r from-indigo-600 to-indigo-800 text-white w-full md:w-auto px-4 md:px-8 py-3 md:py-4 rounded-lg md:rounded-xl flex items-center justify-center md:justify-start hover:shadow-lg transition-all">
+                    <span>Discover Engineering Programs</span>
+                    <ChevronRight size={18} className="ml-2" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
 
           {/* For Industry */}
-          <div className="flex flex-col md:flex-row shadow-lg rounded-lg overflow-hidden border border-indigo-100 hover:shadow-xl transition-shadow duration-300">
-            {/* Image area */}
-            <div className="w-full md:w-1/3 bg-indigo-50">
-              <img src="/src/assets/homepage/industry.jpg" alt="Industry Solutions" className="w-full h-full object-cover" />
-            </div>
-            
-            {/* Content area */}
-            <div className="w-full md:w-2/3 bg-white p-8">
-              <div className="flex items-center mb-4">
-                <Briefcase className="text-indigo-600 mr-3" size={28} />
-                <h2 className="text-xl font-bold text-indigo-800">For Industry & Corporate Solutions</h2>
+          <div className="bg-gradient-to-br from-indigo-50 to-white rounded-xl md:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl md:hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <div className="flex flex-col md:flex-row h-full">
+              {/* Image area - Better mobile sizing */}
+              <div className="w-full md:w-2/5 h-48 sm:h-56 md:h-auto relative overflow-hidden">
+                <div className="absolute inset-0 bg-indigo-200 opacity-20"></div>
+                <div className="h-full flex items-center justify-center">
+                  <img src="/src/assets/homepage/industry.jpg" alt="Industry Solutions" className="w-full h-full object-cover md:object-contain" />
+                </div>
               </div>
-              <div className="mb-6">
-                <p className="text-gray-700 mb-6">
-                  <span className="inline-block transform hover:translate-x-1 transition-transform">👉</span> <strong>AI & Robotics Solutions for Smart Industries</strong>
-                </p>
-                <button className="bg-indigo-600 text-white px-6 py-3 rounded-md flex items-center hover:bg-indigo-700 transition-colors group">
-                  <span>Explore Industry 4.0 Solutions</span>
-                  <ChevronRight size={20} className="ml-1 group-hover:translate-x-1 transition-transform" />
-                </button>
+              
+              {/* Content area with flex layout to push button to bottom */}
+              <div className="w-full md:w-3/5 p-5 md:p-8 flex flex-col h-full">
+                <div className="flex items-center mb-4 md:mb-6">
+                  <div className="bg-indigo-600 p-2 md:p-3 rounded-lg md:rounded-xl text-white shadow">
+                    <Briefcase size={24} />
+                  </div>
+                  <h2 className="text-xl md:text-2xl font-bold text-indigo-800 ml-3 md:ml-4">For Industry & Corporate Solutions</h2>
+                </div>
+                <div className="flex-grow">
+                  <p className="text-gray-700 mb-5 md:mb-8 text-base md:text-lg">
+                    <span className="inline-block text-indigo-600 mr-2">➤</span>
+                    <strong>AI & Robotics Solutions for Smart Industries</strong>
+                  </p>
+                </div>
+                {/* Button pushed to bottom */}
+                <div className="mt-auto">
+                  <button className="bg-gradient-to-r from-indigo-600 to-indigo-800 text-white w-full md:w-auto px-4 md:px-8 py-3 md:py-4 rounded-lg md:rounded-xl flex items-center justify-center md:justify-start hover:shadow-lg transition-all">
+                    <span>Explore Industry 4.0 Solutions</span>
+                    <ChevronRight size={18} className="ml-2" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="text-center text-indigo-600 text-sm py-4">
+        {/* Copyright - Mobile friendly */}
+        <div className="text-center bg-indigo-600 text-white text-xs md:text-sm py-3 md:py-4 rounded-full shadow-md">
           © ROBOMONK TECHNOLOGIES PVT LTD
         </div>
       </div>
