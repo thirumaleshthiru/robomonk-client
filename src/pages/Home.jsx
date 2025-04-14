@@ -1,5 +1,9 @@
 import React from 'react';
 import { School, Briefcase, GraduationCap, ChevronRight } from 'lucide-react';
+import logoImage from '/src/assets/homepage/logo.png';
+import k12Image from '/src/assets/homepage/k12.jpg';
+import graduatesImage from '/src/assets/homepage/graduates.jpeg';
+import industryImage from '/src/assets/homepage/industry.jpg';
 
 function Home() {
   return (
@@ -8,7 +12,7 @@ function Home() {
       <div className="w-full py-6 md:py-8 flex justify-center">
         <div className="flex flex-col items-center px-4">
           {/* Responsive logo image */}
-          <img src="/src/assets/homepage/logo.png" alt="RoboMonk Logo" className="w-[100%] md:w-[40%] h-auto object-contain" />
+          <img src={logoImage} alt="RoboMonk Logo" className="w-[100%] md:w-[40%] h-auto object-contain" />
           <div className="text-white tracking-widest text-xs md:text-sm font-medium bg-indigo-800 bg-opacity-40 px-4 md:px-6 py-1 md:py-2 rounded-full mt-2 md:mt-3">
             LEARN • INVENT • DISCOVER
           </div>
@@ -39,7 +43,7 @@ function Home() {
               <div className="w-full md:w-2/5 h-48 sm:h-56 md:h-auto relative overflow-hidden">
                 <div className="absolute inset-0 bg-indigo-200 opacity-20"></div>
                 <div className="h-full flex items-center justify-center">
-                  <img src="/src/assets/homepage/k12.jpg" alt="K-12 Education" className="w-full h-full object-cover md:object-contain" />
+                  <img src={k12Image} alt="K-12 Education" className="w-full h-full object-cover md:object-contain" />
                 </div>
               </div>
               
@@ -75,7 +79,7 @@ function Home() {
               <div className="w-full md:w-2/5 h-48 sm:h-56 md:h-auto relative overflow-hidden">
                 <div className="absolute inset-0 bg-indigo-200 opacity-20"></div>
                 <div className="h-full flex items-center justify-center">
-                  <img src="/src/assets/homepage/graduates.jpeg" alt="College Students" className="w-full h-full object-cover md:object-contain" />
+                  <img src={graduatesImage} alt="College Students" className="w-full h-full object-cover md:object-contain" />
                 </div>
               </div>
               
@@ -111,7 +115,7 @@ function Home() {
               <div className="w-full md:w-2/5 h-48 sm:h-56 md:h-auto relative overflow-hidden">
                 <div className="absolute inset-0 bg-indigo-200 opacity-20"></div>
                 <div className="h-full flex items-center justify-center">
-                  <img src="/assets/homepage/industry.jpg" alt="Industry Solutions" className="w-full h-full object-cover md:object-contain" />
+                  <img src={industryImage} alt="Industry Solutions" className="w-full h-full object-cover md:object-contain" />
                 </div>
               </div>
               
